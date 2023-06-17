@@ -17,14 +17,7 @@ const Context = ({ children }) => {
   const [books, setBooks] = useState(myData);
   const [state, dispatch] = useReducer(ReducerFunc, initialState);
 
-  //   const getData = () => {
-  //     setBooks(myData);
-  //   };
-
-  //   useEffect(() => {
-  //     console.log("hey");
-  //     getData();
-  //   }, []);
+  console.log(books);
 
   const searchedBook =
     state?.searchBook?.length > 0
@@ -38,7 +31,7 @@ const Context = ({ children }) => {
   return (
     <div>
       <ContextProvider.Provider
-        value={{ books, state, dispatch, searchedBook, books, setBooks }}
+        value={{ books, state, dispatch, searchedBook, setBooks }}
       >
         {children}
       </ContextProvider.Provider>

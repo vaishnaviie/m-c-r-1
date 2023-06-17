@@ -10,12 +10,13 @@ const Search = () => {
   return (
     <div>
       <button onClick={() => navigate("/")}>Home</button>
-      {searchedBook?.map((book) => (
-        <li>
-          <img src={book.book} alt="pic" />
-          <p>{book.author}</p>
-        </li>
-      ))}
+      {searchedBook.length > 0 &&
+        searchedBook?.map((book) => (
+          <li>
+            <img src={book.book} alt="pic" />
+            <p>{book.author}</p>
+          </li>
+        ))}
     </div>
   );
 };
